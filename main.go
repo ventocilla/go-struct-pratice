@@ -1,8 +1,9 @@
 package main
 
 import (
-	"example.com/note/note"
 	"fmt"
+
+	Note "example.com/note/note"
 )
 
 func main() {
@@ -10,8 +11,12 @@ func main() {
 
 	userNote, err := Note.New(title, content)
 
-	fmt.Println(title)
-	fmt.Println(content)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	userNote.Display()
 }
 
 func getNoteData() (string, string) {
