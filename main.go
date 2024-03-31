@@ -6,7 +6,7 @@ import (
 	"os"
 	"strings"
 
-	Note "example.com/note/note"
+	note "example.com/note/note"
 	todo "example.com/note/todo"
 )
 
@@ -21,7 +21,7 @@ func main() {
 		return
 	}
 
-	userNote, err := Note.New(title, content)
+	userNote, err := note.New(title, content)
 
 	if err != nil {
 		fmt.Println(err)
